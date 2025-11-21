@@ -2,16 +2,19 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Process from './components/Process'
+import Work from './components/Work'
 import CTA from './components/CTA'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-slate-950 text-slate-100 relative">
+      <div className="grain" />
       <Navbar />
       <main>
         <Hero />
         <Services />
         <Process />
+        <Work />
         <CTA />
       </main>
       <footer className="border-t border-white/10 py-10">
@@ -20,6 +23,7 @@ function App() {
           <div className="flex items-center gap-4 text-slate-400 text-sm">
             <a href="#services" className="hover:text-white transition">Services</a>
             <a href="#process" className="hover:text-white transition">Process</a>
+            <a href="#work" className="hover:text-white transition">Work</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
           </div>
         </div>

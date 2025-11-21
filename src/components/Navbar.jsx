@@ -1,8 +1,21 @@
 import { Menu, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mouse, setMouse] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const onMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      setMouse({ x, y });
+      document.documentElement.style.setProperty("--x", `${x}%`);
+      document.documentElement.style.setProperty("--y", `${y}%`);
+    };
+    window.addEventListener("pointermove", onMove);
+    return () => window.removeEventListener("pointermove", onMove);
+  }, []);
 
   const nav = (
     <ul className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-slate-200/90">
@@ -15,17 +28,19 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-30">
+      <div className="spotlight" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
+        <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 glow-border">
           <div className="flex items-center justify-between px-4 py-3">
-            <a href="#top" className="inline-flex items-center gap-2">
+            <a href="#top" className="inline-flex items-center gap-3">
               <div className="relative">
                 <div className="absolute inset-0 blur-md bg-gradient-to-tr from-fuchsia-500 via-sky-400 to-emerald-400 opacity-70"></div>
-                <div className="relative grid place-items-center w-9 h-9 rounded-xl bg-slate-800 border border-white/20">
+                <div className="relative grid place-items-center w-10 h-10 rounded-xl bg-slate-800 border border-white/20">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
               </div>
               <span className="font-semibold tracking-tight text-white text-lg">Meholli</span>
+              <span className="hidden sm:inline text-slate-400/90 text-sm">— System Architect</span>
             </a>
 
             <nav className="hidden md:block">{nav}</nav>

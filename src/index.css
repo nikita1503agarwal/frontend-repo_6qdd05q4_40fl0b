@@ -5,42 +5,50 @@
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-geist: 'Geist', system-ui, sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-    --font-mona: 'Mona Sans', system-ui, sans-serif;
-    --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
-    --font-manrope: 'Manrope', system-ui, sans-serif;
+    --glow-1: 255, 99, 233; /* fuchsia */
+    --glow-2: 56, 189, 248;  /* sky */
+    --glow-3: 34, 197, 94;   /* emerald */
   }
 
-  html {
-    font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
+  html { font-family: var(--font-sans); font-feature-settings: "rlig" 1, "calt" 1; }
+  body { @apply antialiased bg-slate-950 text-slate-100; }
+}
+
+/* Fancy global effects */
+@layer components {
+  .grain {
+    pointer-events: none;
+    position: fixed; inset: 0; z-index: 0; opacity: .06; mix-blend-multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  body {
-    @apply antialiased;
+  .spotlight {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.08), transparent 40%);
+    transition: background-position .2s ease-out;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::after {
+    content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; filter: blur(16px);
+    background: linear-gradient(90deg, rgba(var(--glow-1),.25), rgba(var(--glow-2),.25), rgba(var(--glow-3),.25));
+    opacity: .8;
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
 @layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
+  .text-gradient {
+    background: linear-gradient(135deg, #fff, rgba(168,85,247,1), rgba(56,189,248,1));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
+  .animate-aurora { animation: aurora 12s ease-in-out infinite alternate; }
+  @keyframes aurora {
+    0% { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
+    50% { transform: translate3d(10%, -8%, 0) rotate(8deg) scale(1.08); }
+    100% { transform: translate3d(-8%, 6%, 0) rotate(-6deg) scale(1.03); }
   }
+  .floaty { animation: floaty 6s ease-in-out infinite; }
+  @keyframes floaty { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
 }

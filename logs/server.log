@@ -3,9 +3,68 @@
 > vite
 
 
-  VITE v5.4.20  ready in 265 ms
+  VITE v5.4.20  ready in 266 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.19.182:3000/
-9:12:07 PM [vite] ✨ new dependencies optimized: @splinetool/react-spline, lucide-react
-9:12:07 PM [vite] ✨ optimized dependencies changed. reloading
+9:17:57 PM [vite] Pre-transform error: [postcss] /home/workspace/src/index.css:21:58: Unknown word mix-blend-multiply
+9:17:58 PM [vite] Internal server error: [postcss] /home/workspace/src/index.css:21:58: Unknown word mix-blend-multiply
+  Plugin: vite:css
+  File: /home/workspace/src/index.css:21:57
+  19 |    .grain {
+  20 |      pointer-events: none;
+  21 |      position: fixed; inset: 0; z-index: 0; opacity: .06; mix-blend-multiply;
+     |                                                           ^
+  22 |      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  23 |    }
+      at Input.error (/home/workspace/node_modules/postcss/lib/input.js:135:16)
+      at Parser.unknownWord (/home/workspace/node_modules/postcss/lib/parser.js:595:22)
+      at Parser.other (/home/workspace/node_modules/postcss/lib/parser.js:437:12)
+      at Parser.parse (/home/workspace/node_modules/postcss/lib/parser.js:472:16)
+      at parse (/home/workspace/node_modules/postcss/lib/parse.js:11:12)
+      at new LazyResult (/home/workspace/node_modules/postcss/lib/lazy-result.js:165:16)
+      at Processor.process (/home/workspace/node_modules/postcss/lib/processor.js:53:14)
+      at compileCSS (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:59)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+9:17:58 PM [vite] ✨ new dependencies optimized: framer-motion
+9:17:58 PM [vite] ✨ optimized dependencies changed. reloading
+9:17:59 PM [vite] Pre-transform error: [postcss] /home/workspace/src/index.css:21:58: Unknown word mix-blend-multiply
+9:18:00 PM [vite] Internal server error: [postcss] /home/workspace/src/index.css:21:58: Unknown word mix-blend-multiply
+  Plugin: vite:css
+  File: /home/workspace/src/index.css:21:57
+  19 |    .grain {
+  20 |      pointer-events: none;
+  21 |      position: fixed; inset: 0; z-index: 0; opacity: .06; mix-blend-multiply;
+     |                                                           ^
+  22 |      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  23 |    }
+      at Input.error (/home/workspace/node_modules/postcss/lib/input.js:135:16)
+      at Parser.unknownWord (/home/workspace/node_modules/postcss/lib/parser.js:595:22)
+      at Parser.other (/home/workspace/node_modules/postcss/lib/parser.js:437:12)
+      at Parser.parse (/home/workspace/node_modules/postcss/lib/parser.js:472:16)
+      at parse (/home/workspace/node_modules/postcss/lib/parse.js:11:12)
+      at new LazyResult (/home/workspace/node_modules/postcss/lib/lazy-result.js:165:16)
+      at Processor.process (/home/workspace/node_modules/postcss/lib/processor.js:53:14)
+      at compileCSS (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:59)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+9:18:18 PM [vite] Internal server error: [postcss] /home/workspace/src/index.css:21:58: Unknown word mix-blend-multiply
+  Plugin: vite:css
+  File: /home/workspace/src/index.css:21:57
+  19 |    .grain {
+  20 |      pointer-events: none;
+  21 |      position: fixed; inset: 0; z-index: 0; opacity: .06; mix-blend-multiply;
+     |                                                           ^
+  22 |      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  23 |    }
+      at Input.error (/home/workspace/node_modules/postcss/lib/input.js:135:16)
+      at Parser.unknownWord (/home/workspace/node_modules/postcss/lib/parser.js:595:22)
+      at Parser.other (/home/workspace/node_modules/postcss/lib/parser.js:437:12)
+      at Parser.parse (/home/workspace/node_modules/postcss/lib/parser.js:472:16)
+      at parse (/home/workspace/node_modules/postcss/lib/parse.js:11:12)
+      at new LazyResult (/home/workspace/node_modules/postcss/lib/lazy-result.js:165:16)
+      at Processor.process (/home/workspace/node_modules/postcss/lib/processor.js:53:14)
+      at compileCSS (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:59)
+      at async TransformPluginContext.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+      at async PluginContainer.transform (file:///home/workspace/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
